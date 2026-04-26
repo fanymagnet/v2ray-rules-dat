@@ -165,6 +165,74 @@ jobs:
           curl -sSL $WIN_UPDATE | grep "0.0.0.0" | awk '{print $2}' > win-update.txt
           curl -sSL $WIN_EXTRA | grep "0.0.0.0" | awk '{print $2}' > ./community/data/win-extra
           curl -sSL $WIN_EXTRA | grep "0.0.0.0" | awk '{print $2}' > win-extra.txt
+          echo >> ./community/data/category-doh && cat <<'EOF' >> ./community/data/category-doh
+          # Cloudflare DNS
+          full:one.one.one.one
+          full:dns.cloudflare.com
+          domain:cloudflare-dns.com
+          # Google DNS
+          full:dns.google
+          full:8888.google
+          full:dns.google.com
+          full:dns64.dns.google
+          # Mullvad
+          domain:dns.mullvad.net
+          domain:doh.mullvad.net
+          domain:dot.mullvad.net
+          domain:public-resolver.mullvad.net
+          # NextDNS
+          domain:dns.nextdns.io
+          domain:dns1.nextdns.io
+          domain:dns2.nextdns.io
+          # ControlD
+          domain:dns.controld.net
+          domain:dns.controld.com
+          domain:freedns.controld.net
+          domain:freedns.controld.com
+          # Cisco OpenDNS
+          full:dns.opendns.com
+          full:doh.opendns.com
+          full:pdns.opendns.com
+          full:dns7071.opendns.com
+          full:resolver1.opendns.com
+          full:resolver2.opendns.com
+          full:familyshield.opendns.com
+          full:doh.familyshield.opendns.com
+          # Cisco Umbrella
+          full:dns.umbrella.com
+          full:doh.umbrella.com
+          full:pdns.umbrella.com
+          full:dns7071.umbrella.com
+          # Cisco SSE
+          full:dns.sse.cisco.com
+          full:doh.sse.cisco.com
+          full:dns7071.sse.cisco.com
+          full:familyshield.sse.cisco.com
+          # Quad9 DNS
+          full:dns.quad9.net
+          full:dns9.quad9.net
+          full:dns10.quad9.net
+          full:dns11.quad9.net
+          full:dns12.quad9.net
+          full:dns13.quad9.net
+          full:dns254.quad9.net
+          full:dns-nosec.quad9.net
+          full:doh-brave.quad9.net
+          full:doh-chrome.quad9.net
+          full:doh-mozilla.quad9.net
+          full:dns.resolver.quad9.net
+          # AdGuard DNS
+          domain:adguard-dns.com
+          full:dns.adguard.com
+          full:dns-family.adguard.com
+          full:dns-unfiltered.adguard.com
+          # Yandex DNS
+          domain:dot.dns.yandex.net
+          # CleanBrowsing
+          domain:cleanbrowsing.org
+          # Wikimedia DNS
+          full:wikimedia-dns.org
+          EOF
 
       - name: Build geosite.dat file
         run: |
